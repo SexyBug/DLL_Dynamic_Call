@@ -17,7 +17,7 @@ int main() {
         // 传入DLL句柄，获得MyAdd函数的地址，然后强转为lpMyAdd类型
         hello = (HELLO) GetProcAddress(hModule, "hello");
         //或者使用如下写法
-        //void (*hello)() = reinterpret_cast<void (*)(void)>(GetProcAddress(hModule, "hello"));
+        //void (*hello)() = reinterpret_cast<void (*)()>(GetProcAddress(hModule, "hello"));
         if (hello != NULL) {
             hello();
         }
